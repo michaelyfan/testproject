@@ -2,8 +2,10 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+if (!(isset($_ENV["PRODUCTION"]) && $_ENV["PRODUCTION"]=="true")) {
+  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+  $dotenv->load();
+}
 
 $host       = $_ENV["HOST"];
 $username   = $_ENV["USERNAME"];
