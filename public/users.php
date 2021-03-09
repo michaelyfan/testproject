@@ -3,11 +3,11 @@
 if (isset($_POST['submit'])) {
   require "../config.php";
   
+  $sql = "";
   try {
     $db = new PDO($dsn, $username, $password, $options);
 
     $location = $_POST['location'];
-    $sql = "";
     if (strlen($location) >= 1) {
       $sql = "SELECT * FROM users WHERE location = \"$location\"";
     } else {
