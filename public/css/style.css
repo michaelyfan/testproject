@@ -1,4 +1,10 @@
+
 label {
   display: block;
   margin: 5px 0;
 }
+
+.small-text {
+  font-size: 14px;
+}
+
