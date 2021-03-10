@@ -13,7 +13,7 @@ if (getenv("PRODUCTION")=="true") {
   $username   = getenv("USERNAME");
   $password   = getenv("PASSWORD");
   $dbname     = getenv("DBNAME");
-  $port       = getenv("PORT");
+  $port       = getenv("DB_PORT");
 } else {
   $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
   $dotenv->load();
@@ -21,7 +21,7 @@ if (getenv("PRODUCTION")=="true") {
   $username   = $_ENV["USERNAME"];
   $password   = $_ENV["PASSWORD"];
   $dbname     = $_ENV["DBNAME"];
-  $port       = $_ENV["PORT"];
+  $port       = $_ENV["DB_PORT"];
 }
 
 $dsn        = "mysql:host=$host;dbname=$dbname;port=$port";
